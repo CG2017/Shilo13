@@ -110,9 +110,9 @@
         <Label x:Name="HLabel" Content="H" HorizontalAlignment="Left" Margin="22,292,0,0" VerticalAlignment="Top"/>
         <Label x:Name="SLabel" Content="S" HorizontalAlignment="Left" Margin="22,323,0,0" VerticalAlignment="Top"/>
         <Label x:Name="VLabel" Content="V" HorizontalAlignment="Left" Margin="22,354,0,0" VerticalAlignment="Top"/>
-        <Slider x:Name="LSlider" HorizontalAlignment="Left" Margin="46,424,0,0" VerticalAlignment="Top" Height="23" Width="156"/>
-        <Slider x:Name="USlider" HorizontalAlignment="Left" Margin="46,452,0,0" VerticalAlignment="Top" Height="26" Width="156"/>
-        <Slider x:Name="VlSlider" HorizontalAlignment="Left" Margin="46,483,0,0" VerticalAlignment="Top" Height="20" Width="156"/>
+        <Slider x:Name="LSlider" HorizontalAlignment="Left" Margin="46,424,0,0" VerticalAlignment="Top" Height="23" Width="156" Maximum="100" SmallChange="1" LargeChange="5"/>
+        <Slider x:Name="uSlider" HorizontalAlignment="Left" Margin="46,452,0,0" VerticalAlignment="Top" Height="26" Width="156" Maximum="200" Minimum="-200" LargeChange="5" SmallChange="1"/>
+        <Slider x:Name="vSlider" HorizontalAlignment="Left" Margin="46,483,0,0" VerticalAlignment="Top" Height="20" Width="156" SmallChange="1" LargeChange="5" Maximum="200" Minimum="-200"/>
         <Label x:Name="LLabel" Content="L*" HorizontalAlignment="Left" Margin="24,421,0,0" VerticalAlignment="Top"/>
         <Label x:Name="ULabel" Content="u*" HorizontalAlignment="Left" Margin="24,452,0,0" VerticalAlignment="Top"/>
         <Label x:Name="VlLabel" Content="v" HorizontalAlignment="Left" Margin="24,483,0,0" VerticalAlignment="Top"/>
@@ -126,7 +126,8 @@
         <TextBox x:Name="SValueTextBox" HorizontalAlignment="Left" Height="23" Margin="205,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Text="0"/>
         <TextBox x:Name="VValueTextBox" HorizontalAlignment="Left" Height="23" Margin="205,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Text="0"/>
         <TextBox x:Name="LValueTextBox" HorizontalAlignment="Left" Height="23" Margin="207,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Text="0"/>
-        <TextBox x:Name="UValueTextBox" HorizontalAlignment="Left" Height="23" Margin="207,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Text="0"/>
-        <TextBox x:Name="VlValueTextBox" HorizontalAlignment="Left" Height="23" Margin="207,486,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Text="0"/>
+        <TextBox x:Name="uValueTextBox" HorizontalAlignment="Left" Height="23" Margin="207,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Text="0"/>
+        <TextBox x:Name="vValueTextBox" HorizontalAlignment="Left" Height="23" Margin="207,486,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Text="0"/>
+        <TextBlock x:Name="LogTextBlock" HorizontalAlignment="Left" Margin="528,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="96" Width="179" Background="White" Foreground="#FFD80000"/>
     </Grid>
 </Window>
