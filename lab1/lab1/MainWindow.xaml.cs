@@ -139,15 +139,21 @@ namespace lab1
             SetSliderValue(RSlider, r);
             SetSliderValue(GSlider, g);
             SetSliderValue(BSlider, b);
-            RGradientRect.Fill = new LinearGradientBrush(
-                Color.FromRgb(0, g, b), Color.FromRgb(255, g, b),
-                startGradientPoint, endGradientPoint);
-            GGradientRect.Fill = new LinearGradientBrush(
-                Color.FromRgb(r, 0, b), Color.FromRgb(r, 255, b),
-                startGradientPoint, endGradientPoint);
-            BGradientRect.Fill = new LinearGradientBrush(
-                Color.FromRgb(r, g, 0), Color.FromRgb(r, g, 255),
-                startGradientPoint, endGradientPoint);
+
+            ((GradientBrush) RGradientRect.Fill)
+                .GradientStops[0].Color = Color.FromRgb(0, g, b);
+            ((GradientBrush) RGradientRect.Fill)
+                .GradientStops[1].Color = Color.FromRgb(255, g, b);
+
+            ((GradientBrush) GGradientRect.Fill)
+                .GradientStops[0].Color = Color.FromRgb(r, 0, b);
+            ((GradientBrush) GGradientRect.Fill)
+                .GradientStops[1].Color = Color.FromRgb(r, 255, b);
+
+            ((GradientBrush)BGradientRect.Fill)
+                .GradientStops[0].Color = Color.FromRgb(r, g, 0);
+            ((GradientBrush)BGradientRect.Fill)
+                .GradientStops[1].Color = Color.FromRgb(r, g, 255);
 
             RgbColorPicker.SelectedColor = Color.FromRgb(r, g, b);
 
@@ -342,15 +348,24 @@ namespace lab1
             SetTextBoxText(YValueTextBox, y.ToString(CultureInfo.CurrentCulture));
 
             Color rgbColor = GetRgbColorFromCmy(c, m, y);
-            CGradientRect.Fill = new LinearGradientBrush(
-                Color.FromRgb(255, rgbColor.G, rgbColor.B), Color.FromRgb(0, rgbColor.G, rgbColor.B),
-                startGradientPoint, endGradientPoint);
-            MGradientRect.Fill = new LinearGradientBrush(
-                Color.FromRgb(rgbColor.R, 255, rgbColor.B), Color.FromRgb(rgbColor.R, 0, rgbColor.B),
-                startGradientPoint, endGradientPoint);
-            YGradientRect.Fill = new LinearGradientBrush(
-                Color.FromRgb(rgbColor.R, rgbColor.G, 255), Color.FromRgb(rgbColor.R, rgbColor.G, 0),
-                startGradientPoint, endGradientPoint);
+            byte r = rgbColor.R;
+            byte g = rgbColor.G;
+            byte b = rgbColor.B;
+
+            ((GradientBrush)CGradientRect.Fill)
+                .GradientStops[0].Color = Color.FromRgb(255, g, b);
+            ((GradientBrush)CGradientRect.Fill)
+                .GradientStops[1].Color = Color.FromRgb(0, g, b);
+
+            ((GradientBrush)MGradientRect.Fill)
+                .GradientStops[0].Color = Color.FromRgb(r, 255, b);
+            ((GradientBrush)MGradientRect.Fill)
+                .GradientStops[1].Color = Color.FromRgb(r, 0, b);
+
+            ((GradientBrush)YGradientRect.Fill)
+                .GradientStops[0].Color = Color.FromRgb(r, g, 255);
+            ((GradientBrush)YGradientRect.Fill)
+                .GradientStops[1].Color = Color.FromRgb(r, g, 0);
             SubscribeCmy();
         }
 
@@ -402,6 +417,19 @@ namespace lab1
             SetSliderValue(SSlider, s);
             SetSliderValue(VSlider, v);
 
+            double hDeg = 0;
+            foreach (var stop in ((GradientBrush) HGradientRect.Fill).GradientStops)
+            {
+                stop.Color = GetRgbColorFromHsv(hDeg, s, v);
+                hDeg += 1.0/6;
+            }
+            GradientBrush SBrush = SGradientRect.Fill as GradientBrush;
+            SBrush.GradientStops[0].Color = GetRgbColorFromHsv(h, 0, v);
+            SBrush.GradientStops[1].Color = GetRgbColorFromHsv(h, 1, v);
+
+            GradientBrush VBrush = VGradientRect.Fill as GradientBrush;
+            VBrush.GradientStops[0].Color = GetRgbColorFromHsv(h, s, 0);
+            VBrush.GradientStops[1].Color = GetRgbColorFromHsv(h, s, 1);
             SubscribeHsv();
         }
 #endregion
