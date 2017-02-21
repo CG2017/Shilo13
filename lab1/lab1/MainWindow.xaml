@@ -28,6 +28,7 @@
                     <GradientStop Color="#00FF00" Offset="0"/>
                     <GradientStop Color="#000000" Offset="1"/>
                 </LinearGradientBrush>
+                
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle x:Name="BGradientRect" HorizontalAlignment="Left" Height="18" Margin="49,117,0,0" VerticalAlignment="Top" Width="146">
@@ -74,9 +75,9 @@
         <Label x:Name="CLabel" Content="C" HorizontalAlignment="Left" Margin="23,180,0,0" VerticalAlignment="Top"/>
         <Label x:Name="MLabel" Content="M" HorizontalAlignment="Left" Margin="23,211,0,0" VerticalAlignment="Top"/>
         <Label x:Name="YLabel" Content="Y" HorizontalAlignment="Left" Margin="23,242,0,0" VerticalAlignment="Top"/>
-        <Slider x:Name="HSlider" HorizontalAlignment="Left" Margin="44,295,0,0" VerticalAlignment="Top" Height="23" Width="156"/>
-        <Slider x:Name="SSlider" HorizontalAlignment="Left" Margin="44,323,0,0" VerticalAlignment="Top" Height="26" Width="156"/>
-        <Slider x:Name="VSlider" HorizontalAlignment="Left" Margin="44,354,0,0" VerticalAlignment="Top" Height="20" Width="156"/>
+        <Slider x:Name="HSlider" HorizontalAlignment="Left" Margin="44,295,0,0" VerticalAlignment="Top" Height="23" Width="156" Maximum="1" LargeChange="0.1" SmallChange="0.01"/>
+        <Slider x:Name="SSlider" HorizontalAlignment="Left" Margin="44,323,0,0" VerticalAlignment="Top" Height="26" Width="156" LargeChange="0.1" Maximum="1" SmallChange="0.01"/>
+        <Slider x:Name="VSlider" HorizontalAlignment="Left" Margin="44,354,0,0" VerticalAlignment="Top" Height="20" Width="156" LargeChange="0.1" Maximum="1" SmallChange="0.01"/>
         <Label x:Name="HLabel" Content="H" HorizontalAlignment="Left" Margin="22,292,0,0" VerticalAlignment="Top"/>
         <Label x:Name="SLabel" Content="S" HorizontalAlignment="Left" Margin="22,323,0,0" VerticalAlignment="Top"/>
         <Label x:Name="VLabel" Content="V" HorizontalAlignment="Left" Margin="22,354,0,0" VerticalAlignment="Top"/>
