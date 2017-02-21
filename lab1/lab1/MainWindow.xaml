@@ -4,15 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab1"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="725">
     <Grid x:Name="BackgroundGrid" Background="#FFDCC0C0">
+        <xctk:ColorPicker Name="RgbColorPicker" DisplayColorAndName="True" Margin="300,39,221,492"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="117" Margin="10,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="256"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="117" Margin="10,405,0,0" Stroke="Black" VerticalAlignment="Top" Width="256"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="117" Margin="10,283,0,0" Stroke="Black" VerticalAlignment="Top" Width="256"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="117" Margin="10,161,0,0" Stroke="Black" VerticalAlignment="Top" Width="256"/>
 
-        <Rectangle x:Name="RGradientRect" HorizontalAlignment="Left" Height="18" Margin="49,59,0,0" VerticalAlignment="Top" Width="146">
+        <Rectangle x:Name="RGradientRect" HorizontalAlignment="Left" Height="18" Margin="49,58,0,0" VerticalAlignment="Top" Width="146">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0,0.5" MappingMode="RelativeToBoundingBox" StartPoint="1,0.5">
                     <GradientStop Color="#FF0000" Offset="0"/>
@@ -36,15 +38,39 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
+        <Rectangle x:Name="CGradientRect" HorizontalAlignment="Left" Height="18" Margin="49,183,0,0" VerticalAlignment="Top" Width="146">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0,0.5" MappingMode="RelativeToBoundingBox" StartPoint="1,0.5">
+                    <GradientStop Color="#000000" Offset="0"/>
+                    <GradientStop Color="#FF0000" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="MGradientRect" HorizontalAlignment="Left" Height="18" Margin="49,211,0,0" VerticalAlignment="Top" Width="146">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0,0.5" MappingMode="RelativeToBoundingBox" StartPoint="1,0.5">
+                    <GradientStop Color="#000000" Offset="0"/>
+                    <GradientStop Color="#00FF00" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="YGradientRect" HorizontalAlignment="Left" Height="18" Margin="49,242,0,0" VerticalAlignment="Top" Width="146">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0,0.5" MappingMode="RelativeToBoundingBox" StartPoint="1,0.5">
+                    <GradientStop Color="#000000" Offset="0"/>
+                    <GradientStop Color="#0000FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
         <Slider x:Name="RSlider" HorizontalAlignment="Left" Margin="44,58,0,0" VerticalAlignment="Top" Height="23" Width="156" Maximum="255"/>
         <Slider x:Name="GSlider" HorizontalAlignment="Left" Margin="44,86,0,0" VerticalAlignment="Top" Height="26" Width="156" Maximum="255"/>
         <Slider x:Name="BSlider" HorizontalAlignment="Left" Margin="44,117,0,0" VerticalAlignment="Top" Height="20" Width="156" Maximum="255"/>
         <Label x:Name="RLabel" Content="R" HorizontalAlignment="Left" Margin="22,55,0,0" VerticalAlignment="Top"/>
         <Label x:Name="GLabel" Content="G" HorizontalAlignment="Left" Margin="22,86,0,0" VerticalAlignment="Top"/>
         <Label x:Name="BLabel" Content="B" HorizontalAlignment="Left" Margin="22,117,0,0" VerticalAlignment="Top"/>
-        <Slider x:Name="CSlider" HorizontalAlignment="Left" Margin="45,183,0,0" VerticalAlignment="Top" Height="23" Width="156"/>
-        <Slider x:Name="MSlider" HorizontalAlignment="Left" Margin="45,211,0,0" VerticalAlignment="Top" Height="26" Width="156"/>
-        <Slider x:Name="YSlider" HorizontalAlignment="Left" Margin="45,242,0,0" VerticalAlignment="Top" Height="20" Width="156"/>
+        <Slider x:Name="CSlider" HorizontalAlignment="Left" Margin="45,183,0,0" VerticalAlignment="Top" Height="23" Width="156" Maximum="1" SmallChange="0.01" LargeChange="0.1"/>
+        <Slider x:Name="MSlider" HorizontalAlignment="Left" Margin="45,211,0,0" VerticalAlignment="Top" Height="26" Width="156" Maximum="1" LargeChange="0.1" SmallChange="0.01"/>
+        <Slider x:Name="YSlider" HorizontalAlignment="Left" Margin="45,242,0,0" VerticalAlignment="Top" Height="20" Width="156" Maximum="1" SmallChange="0.01" LargeChange="0.1"/>
         <Label x:Name="CLabel" Content="C" HorizontalAlignment="Left" Margin="23,180,0,0" VerticalAlignment="Top"/>
         <Label x:Name="MLabel" Content="M" HorizontalAlignment="Left" Margin="23,211,0,0" VerticalAlignment="Top"/>
         <Label x:Name="YLabel" Content="Y" HorizontalAlignment="Left" Margin="23,242,0,0" VerticalAlignment="Top"/>
