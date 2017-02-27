@@ -144,19 +144,19 @@ namespace lab1
             SetSliderValue(BSlider, b);
 
             ((GradientBrush) RGradientRect.Fill)
-                .GradientStops[0].Color = Color.FromRgb(0, g, b);
+                .GradientStops[1].Color = Color.FromRgb(0, g, b);
             ((GradientBrush) RGradientRect.Fill)
-                .GradientStops[1].Color = Color.FromRgb(255, g, b);
+                .GradientStops[0].Color = Color.FromRgb(255, g, b);
 
             ((GradientBrush) GGradientRect.Fill)
-                .GradientStops[0].Color = Color.FromRgb(r, 0, b);
+                .GradientStops[1].Color = Color.FromRgb(r, 0, b);
             ((GradientBrush) GGradientRect.Fill)
-                .GradientStops[1].Color = Color.FromRgb(r, 255, b);
+                .GradientStops[0].Color = Color.FromRgb(r, 255, b);
 
             ((GradientBrush)BGradientRect.Fill)
-                .GradientStops[0].Color = Color.FromRgb(r, g, 0);
+                .GradientStops[1].Color = Color.FromRgb(r, g, 0);
             ((GradientBrush)BGradientRect.Fill)
-                .GradientStops[1].Color = Color.FromRgb(r, g, 255);
+                .GradientStops[0].Color = Color.FromRgb(r, g, 255);
 
             RgbColorPicker.SelectedColor = Color.FromRgb(r, g, b);
 
@@ -362,19 +362,19 @@ namespace lab1
             byte b = rgbColor.B;
 
             ((GradientBrush)CGradientRect.Fill)
-                .GradientStops[0].Color = Color.FromRgb(255, g, b);
+                .GradientStops[1].Color = Color.FromRgb(255, g, b);
             ((GradientBrush)CGradientRect.Fill)
-                .GradientStops[1].Color = Color.FromRgb(0, g, b);
+                .GradientStops[0].Color = Color.FromRgb(0, g, b);
 
             ((GradientBrush)MGradientRect.Fill)
-                .GradientStops[0].Color = Color.FromRgb(r, 255, b);
+                .GradientStops[1].Color = Color.FromRgb(r, 255, b);
             ((GradientBrush)MGradientRect.Fill)
-                .GradientStops[1].Color = Color.FromRgb(r, 0, b);
+                .GradientStops[0].Color = Color.FromRgb(r, 0, b);
 
             ((GradientBrush)YGradientRect.Fill)
-                .GradientStops[0].Color = Color.FromRgb(r, g, 255);
+                .GradientStops[1].Color = Color.FromRgb(r, g, 255);
             ((GradientBrush)YGradientRect.Fill)
-                .GradientStops[1].Color = Color.FromRgb(r, g, 0);
+                .GradientStops[0].Color = Color.FromRgb(r, g, 0);
             SubscribeCmy();
         }
 
