@@ -6,6 +6,10 @@
         xmlns:local="clr-namespace:lab1"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
+        MinWidth="725"
+        MaxWidth="725"
+        MinHeight="600"
+        MaxHeight="600"
         Title="MainWindow" Height="600" Width="725">
     <Grid x:Name="BackgroundGrid" Background="#FFDCC0C0">
         <xctk:ColorPicker Name="RgbColorPicker" DisplayColorAndName="True" Margin="300,39,221,492"/>
