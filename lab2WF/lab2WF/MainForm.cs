@@ -125,5 +125,15 @@ namespace lab2WF
 
             return curPixel;
         }
+
+        private void btnSetAsSource_Click(object sender, EventArgs e)
+        {
+            if (pctBoxDestination.Image == null)
+            {
+                return;
+            }
+
+            pctBoxSource.Image = new Bitmap(pctBoxDestination.Image);
+        }
     }
 }

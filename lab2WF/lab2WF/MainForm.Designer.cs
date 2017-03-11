@@ -39,6 +39,7 @@
             this.btnSelectColor = new System.Windows.Forms.Button();
             this.sliderSensitivity = new System.Windows.Forms.TrackBar();
             this.lblSensitivity = new System.Windows.Forms.Label();
+            this.btnSetAsSource = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxDestination)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxSelectedColor)).BeginInit();
@@ -152,11 +153,22 @@
             this.lblSensitivity.TabIndex = 10;
             this.lblSensitivity.Text = "Sensitivity";
             // 
+            // btnSetAsSource
+            // 
+            this.btnSetAsSource.Location = new System.Drawing.Point(1076, 423);
+            this.btnSetAsSource.Name = "btnSetAsSource";
+            this.btnSetAsSource.Size = new System.Drawing.Size(143, 42);
+            this.btnSetAsSource.TabIndex = 11;
+            this.btnSetAsSource.Text = "Set as source";
+            this.btnSetAsSource.UseVisualStyleBackColor = true;
+            this.btnSetAsSource.Click += new System.EventHandler(this.btnSetAsSource_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1231, 562);
+            this.Controls.Add(this.btnSetAsSource);
             this.Controls.Add(this.lblSensitivity);
             this.Controls.Add(this.sliderSensitivity);
             this.Controls.Add(this.btnSelectColor);
@@ -193,6 +205,7 @@
         private System.Windows.Forms.Button btnSelectColor;
         private System.Windows.Forms.TrackBar sliderSensitivity;
         private System.Windows.Forms.Label lblSensitivity;
+        private System.Windows.Forms.Button btnSetAsSource;
     }
 }
 
