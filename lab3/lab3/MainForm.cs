@@ -30,9 +30,6 @@ namespace lab3
             string diagramType = (string)listBoxChannels.SelectedItem;
             switch (diagramType)
             {
-                case "RGB":
-                    PaintDiagram(Color.Black, 256 * 3, color => color.R + color.G + color.B);
-                    break;
                 case "Red":
                     PaintDiagram(Color.Red, 256, color => color.R);
                     break;
@@ -77,7 +74,7 @@ namespace lab3
             chartChannels.Series["ChannelValues"].Points.Clear();
             for (int i = 0; i < statistics.Length; i++)
             {
-                chartChannels.Series["ChannelValues"].Points.AddXY(i, statistics[i]);
+                chartChannels.Series["ChannelValues"].Points.AddXY(i, statistics[i] + 1);
             }
         }
 

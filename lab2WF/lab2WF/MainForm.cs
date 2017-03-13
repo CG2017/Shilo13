@@ -22,6 +22,11 @@ namespace lab2WF
         private LabColor selectedLabColor;
         private LabColor deltaVector;
 
+        private double kL = 1.0;
+        private double kA = 1.0;
+        private double kB = 1.0;
+        private double normalValue = 100;
+
         public MainForm()
         {
             InitializeComponent();
@@ -44,12 +49,32 @@ namespace lab2WF
                 sensDistance = sliderSensitivity.Value;
                 btnConvert_Click(this, EventArgs.Empty);
             };
+
+            sliderKA.ValueChanged += (o, e) =>
+            {
+                kA = sliderKA.Value/normalValue;
+                lblKAvalue.Text = kA.ToString("0.##");
+                btnConvert_Click(this, EventArgs.Empty);
+            };
+
+            sliderKB.ValueChanged += (o, e) =>
+            {
+                kB = sliderKB.Value/normalValue;
+                lblKBvalue.Text = kB.ToString("0.##");
+                btnConvert_Click(this, EventArgs.Empty);
+            };
+
+            sliderKL.ValueChanged += (o, e) =>
+            {
+                lblKLvalue.Text = kL.ToString("0.##");
+                kL = sliderKL.Value/normalValue;
+                btnConvert_Click(this, EventArgs.Empty);
+            };
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             fileDialog.ShowDialog(this);
-            //fileDialog.Filter = Resources.FilesFilterString;
         }
 
         private void PixelMouseClickHandler(object sender, MouseEventArgs args)
@@ -118,7 +143,7 @@ namespace lab2WF
             Color curPixel = source.GetPixel(x, y);
             LabColor curLabColor = ColorConverter.GetLabFromRgb(curPixel);
 
-            if (ColorConverter.GetDistance(curLabColor, selectedLabColor) <= sensDistance)
+            if (ColorConverter.GetDistance(curLabColor, selectedLabColor, kL, kA, kB) <= sensDistance)
             {
                 return ColorConverter.GetRgbColorFromLab(curLabColor + deltaVector);
             }

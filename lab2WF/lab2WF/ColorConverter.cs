@@ -5,16 +5,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ColorMine.ColorSpaces;
 
 namespace lab2WF
 {
     public static class ColorConverter
     {
-        public static double GetDistance(LabColor first, LabColor second)
+        public static double GetDistance(LabColor first, LabColor second,
+            double kL = 1, double kA = 1, double kB = 1)
         {
-            return Math.Sqrt((first.A - second.A)*(first.A - second.A)
-                             + (first.B - second.B)*(first.B - second.B)
-                + 0.25*(first.L - second.L) * (first.L - second.L));
+            return Math.Sqrt(kA * (first.A - second.A)*(first.A - second.A)
+                             + kB * (first.B - second.B)*(first.B - second.B)+
+                             kL*(first.L - second.L) * (first.L - second.L));
         }
 
         public static XyzColor GetXyzColorFromRgb(Color color)
@@ -138,12 +140,17 @@ namespace lab2WF
 
         public static LabColor GetLabFromRgb(Color rgbColor)
         {
-            return GetLabColorFromXyz(GetXyzColorFromRgb(rgbColor));
+            Lab labColor = new Lab {};
+            labColor.Initialize(new Rgb { R = rgbColor.R, B = rgbColor.B, G = rgbColor.G });
+
+            return new LabColor(labColor.L, labColor.A, labColor.B);
         }
 
         public static Color GetRgbColorFromLab(LabColor labColor)
         {
-            return GetRgbColorFromXyz(GetXyzColorFromLab(labColor));
+            Lab lab = new Lab {A = labColor.A, B = labColor.B, L = labColor.L};
+            IRgb rgbColor = lab.ToRgb();
+            return Color.FromArgb((int)rgbColor.R, (int)rgbColor.G, (int)rgbColor.B);
         }
     }
 
@@ -151,10 +158,10 @@ namespace lab2WF
     {
         public static double Clamp(double value, double left, double right)
         {
-            if (value < left)
-                return left;
-            if (value > right)
-                return right;
+            //if (value < left)
+            //    return left;
+            //if (value > right)
+            //    return right;
             return value;
         }    
     }

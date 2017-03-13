@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 5D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 3D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 7D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 2D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 5D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 3D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 7D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 2D);
             this.pctSource = new System.Windows.Forms.PictureBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.listBoxChannels = new System.Windows.Forms.ListBox();
@@ -69,32 +69,33 @@
             // 
             this.listBoxChannels.FormattingEnabled = true;
             this.listBoxChannels.Items.AddRange(new object[] {
-            "RGB",
             "Red",
             "Green",
             "Blue"});
             this.listBoxChannels.Location = new System.Drawing.Point(256, 368);
             this.listBoxChannels.Name = "listBoxChannels";
-            this.listBoxChannels.Size = new System.Drawing.Size(117, 56);
+            this.listBoxChannels.Size = new System.Drawing.Size(117, 43);
             this.listBoxChannels.TabIndex = 3;
             // 
             // chartChannels
             // 
-            chartArea1.Name = "ChannelArea";
-            this.chartChannels.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartChannels.Legends.Add(legend1);
+            chartArea2.AxisY.IsLogarithmic = true;
+            chartArea2.AxisY2.IsLogarithmic = true;
+            chartArea2.Name = "ChannelArea";
+            this.chartChannels.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartChannels.Legends.Add(legend2);
             this.chartChannels.Location = new System.Drawing.Point(409, 12);
             this.chartChannels.Name = "chartChannels";
-            series1.ChartArea = "ChannelArea";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series1.Legend = "Legend1";
-            series1.Name = "ChannelValues";
-            series1.Points.Add(dataPoint1);
-            series1.Points.Add(dataPoint2);
-            series1.Points.Add(dataPoint3);
-            series1.Points.Add(dataPoint4);
-            this.chartChannels.Series.Add(series1);
+            series2.ChartArea = "ChannelArea";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series2.Legend = "Legend1";
+            series2.Name = "ChannelValues";
+            series2.Points.Add(dataPoint5);
+            series2.Points.Add(dataPoint6);
+            series2.Points.Add(dataPoint7);
+            series2.Points.Add(dataPoint8);
+            this.chartChannels.Series.Add(series2);
             this.chartChannels.Size = new System.Drawing.Size(859, 553);
             this.chartChannels.TabIndex = 4;
             this.chartChannels.Text = "Channels diagram";

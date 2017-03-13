@@ -40,11 +40,23 @@
             this.sliderSensitivity = new System.Windows.Forms.TrackBar();
             this.lblSensitivity = new System.Windows.Forms.Label();
             this.btnSetAsSource = new System.Windows.Forms.Button();
+            this.sliderKL = new System.Windows.Forms.TrackBar();
+            this.sliderKA = new System.Windows.Forms.TrackBar();
+            this.sliderKB = new System.Windows.Forms.TrackBar();
+            this.lblKL = new System.Windows.Forms.Label();
+            this.lblKA = new System.Windows.Forms.Label();
+            this.lblKB = new System.Windows.Forms.Label();
+            this.lblKLvalue = new System.Windows.Forms.Label();
+            this.lblKAvalue = new System.Windows.Forms.Label();
+            this.lblKBvalue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxDestination)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxSelectedColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxDestColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sliderSensitivity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sliderKL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sliderKA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sliderKB)).BeginInit();
             this.SuspendLayout();
             // 
             // pctBoxSource
@@ -163,11 +175,101 @@
             this.btnSetAsSource.UseVisualStyleBackColor = true;
             this.btnSetAsSource.Click += new System.EventHandler(this.btnSetAsSource_Click);
             // 
+            // sliderKL
+            // 
+            this.sliderKL.Location = new System.Drawing.Point(134, 446);
+            this.sliderKL.Maximum = 500;
+            this.sliderKL.Name = "sliderKL";
+            this.sliderKL.Size = new System.Drawing.Size(177, 45);
+            this.sliderKL.TabIndex = 12;
+            this.sliderKL.Value = 100;
+            // 
+            // sliderKA
+            // 
+            this.sliderKA.Location = new System.Drawing.Point(134, 516);
+            this.sliderKA.Maximum = 500;
+            this.sliderKA.Name = "sliderKA";
+            this.sliderKA.Size = new System.Drawing.Size(177, 45);
+            this.sliderKA.TabIndex = 13;
+            this.sliderKA.Value = 100;
+            // 
+            // sliderKB
+            // 
+            this.sliderKB.Location = new System.Drawing.Point(134, 591);
+            this.sliderKB.Maximum = 500;
+            this.sliderKB.Name = "sliderKB";
+            this.sliderKB.Size = new System.Drawing.Size(177, 45);
+            this.sliderKB.TabIndex = 14;
+            this.sliderKB.Value = 100;
+            // 
+            // lblKL
+            // 
+            this.lblKL.AutoSize = true;
+            this.lblKL.Location = new System.Drawing.Point(131, 430);
+            this.lblKL.Name = "lblKL";
+            this.lblKL.Size = new System.Drawing.Size(56, 13);
+            this.lblKL.TabIndex = 15;
+            this.lblKL.Text = "L multiplier";
+            // 
+            // lblKA
+            // 
+            this.lblKA.AutoSize = true;
+            this.lblKA.Location = new System.Drawing.Point(131, 500);
+            this.lblKA.Name = "lblKA";
+            this.lblKA.Size = new System.Drawing.Size(56, 13);
+            this.lblKA.TabIndex = 16;
+            this.lblKA.Text = "a multiplier";
+            // 
+            // lblKB
+            // 
+            this.lblKB.AutoSize = true;
+            this.lblKB.Location = new System.Drawing.Point(131, 575);
+            this.lblKB.Name = "lblKB";
+            this.lblKB.Size = new System.Drawing.Size(56, 13);
+            this.lblKB.TabIndex = 17;
+            this.lblKB.Text = "b multiplier";
+            // 
+            // lblKLvalue
+            // 
+            this.lblKLvalue.AutoSize = true;
+            this.lblKLvalue.Location = new System.Drawing.Point(317, 452);
+            this.lblKLvalue.Name = "lblKLvalue";
+            this.lblKLvalue.Size = new System.Drawing.Size(28, 13);
+            this.lblKLvalue.TabIndex = 18;
+            this.lblKLvalue.Text = "1.00";
+            // 
+            // lblKAvalue
+            // 
+            this.lblKAvalue.AutoSize = true;
+            this.lblKAvalue.Location = new System.Drawing.Point(317, 516);
+            this.lblKAvalue.Name = "lblKAvalue";
+            this.lblKAvalue.Size = new System.Drawing.Size(28, 13);
+            this.lblKAvalue.TabIndex = 19;
+            this.lblKAvalue.Text = "1.00";
+            // 
+            // lblKBvalue
+            // 
+            this.lblKBvalue.AutoSize = true;
+            this.lblKBvalue.Location = new System.Drawing.Point(317, 591);
+            this.lblKBvalue.Name = "lblKBvalue";
+            this.lblKBvalue.Size = new System.Drawing.Size(28, 13);
+            this.lblKBvalue.TabIndex = 20;
+            this.lblKBvalue.Text = "1.00";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1231, 562);
+            this.ClientSize = new System.Drawing.Size(1231, 648);
+            this.Controls.Add(this.lblKBvalue);
+            this.Controls.Add(this.lblKAvalue);
+            this.Controls.Add(this.lblKLvalue);
+            this.Controls.Add(this.lblKB);
+            this.Controls.Add(this.lblKA);
+            this.Controls.Add(this.lblKL);
+            this.Controls.Add(this.sliderKB);
+            this.Controls.Add(this.sliderKA);
+            this.Controls.Add(this.sliderKL);
             this.Controls.Add(this.btnSetAsSource);
             this.Controls.Add(this.lblSensitivity);
             this.Controls.Add(this.sliderSensitivity);
@@ -187,6 +289,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxSelectedColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxDestColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sliderSensitivity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sliderKL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sliderKA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sliderKB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +311,15 @@
         private System.Windows.Forms.TrackBar sliderSensitivity;
         private System.Windows.Forms.Label lblSensitivity;
         private System.Windows.Forms.Button btnSetAsSource;
+        private System.Windows.Forms.TrackBar sliderKL;
+        private System.Windows.Forms.TrackBar sliderKA;
+        private System.Windows.Forms.TrackBar sliderKB;
+        private System.Windows.Forms.Label lblKL;
+        private System.Windows.Forms.Label lblKA;
+        private System.Windows.Forms.Label lblKB;
+        private System.Windows.Forms.Label lblKLvalue;
+        private System.Windows.Forms.Label lblKAvalue;
+        private System.Windows.Forms.Label lblKBvalue;
     }
 }
 
