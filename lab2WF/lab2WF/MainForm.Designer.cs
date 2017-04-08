@@ -65,7 +65,7 @@
             this.pctBoxSource.Location = new System.Drawing.Point(12, 12);
             this.pctBoxSource.Name = "pctBoxSource";
             this.pctBoxSource.Size = new System.Drawing.Size(509, 400);
-            this.pctBoxSource.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctBoxSource.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxSource.TabIndex = 0;
             this.pctBoxSource.TabStop = false;
             // 
@@ -75,7 +75,7 @@
             this.pctBoxDestination.Location = new System.Drawing.Point(710, 12);
             this.pctBoxDestination.Name = "pctBoxDestination";
             this.pctBoxDestination.Size = new System.Drawing.Size(509, 400);
-            this.pctBoxDestination.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctBoxDestination.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxDestination.TabIndex = 1;
             this.pctBoxDestination.TabStop = false;
             // 
