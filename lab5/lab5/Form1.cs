@@ -214,9 +214,9 @@ namespace lab5
                 int yr = y;
                 int yv = y - 1;
                 int yd = y - 1;
-                double diffR = CountDiff(xr, yr, radius);
-                double diffV = CountDiff(xv, yv, radius);
-                double diffD = CountDiff(xd, yd, radius);
+                int diffR = CountDiff(xr, yr, radius);
+                int diffV = CountDiff(xv, yv, radius);
+                int diffD = CountDiff(xd, yd, radius);
                 if (diffR < diffD && diffR < diffV)
                 {
                     PutCirclePixel(x0, y0, xr, yr);
@@ -247,11 +247,13 @@ namespace lab5
             PutPixel(x0 - x, y0 + y);
         }
 
-        public static double CountDiff(int x, int y, int radius)
+        public static int CountDiff(int x, int y, int radius)
         {
-            double dist = Math.Sqrt(x * x + y * y);
-            double diff = Math.Abs(dist - radius);
-            return diff;
+            //double dist = Math.Sqrt(x * x + y * y);
+            //double diff = Math.Abs(dist - radius);
+            int dist = x * x + y * y;
+            int diff = dist - radius * radius;
+            return Math.Abs(diff);
         }
 
         private void y1TB_TextChanged(object sender, EventArgs e)
