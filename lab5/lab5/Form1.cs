@@ -19,6 +19,8 @@ namespace lab5
             InitTrackbars();
             ConfigureButtons();
             btn1BLine_Click(this, null);
+            zedGraphControl1.GraphPane.XAxis.MajorGrid.IsVisible = true;
+            zedGraphControl1.GraphPane.YAxis.MajorGrid.IsVisible = true;
         }
 
         private void ConfigureButtons()
@@ -171,6 +173,8 @@ namespace lab5
         private static void BresenhamCircle(int radius)
         {
             int x0 = radius + 5, y0 = radius + 5;
+            MyBresenhamCircle(x0, y0, radius);
+            return;
             int x = 0, y = radius, gap, delta = 2 - 2*radius;
             while (y >= 0)
             {
@@ -195,6 +199,59 @@ namespace lab5
                 delta += 2*(x - y);
                 y--;
             }
+        }
+
+        public static void MyBresenhamCircle(int x0, int y0, int radius)
+        {
+            int x = 0;
+            int y = radius;
+            PutCirclePixel(x0, y0, x, y);
+            while (y > 0)
+            {
+                int xr = x + 1;
+                int xv = x;
+                int xd = x + 1;
+                int yr = y;
+                int yv = y - 1;
+                int yd = y - 1;
+                double diffR = CountDiff(xr, yr, radius);
+                double diffV = CountDiff(xv, yv, radius);
+                double diffD = CountDiff(xd, yd, radius);
+                if (diffR < diffD && diffR < diffV)
+                {
+                    PutCirclePixel(x0, y0, xr, yr);
+                    x = xr;
+                    y = yr;
+                }
+                else if (diffV < diffD && diffV < diffD)
+                {
+                    PutCirclePixel(x0, y0, xv, yv);
+                    x = xv;
+                    y = yv;
+                }
+                else
+                {
+                    PutCirclePixel(x0, y0, xd, yd);
+                    x = xd;
+                    y = yd;
+                }
+
+            }
+        }
+
+        public static void PutCirclePixel(int x0, int y0, int x, int y)
+        {
+            PutPixel(x0 + x, y0 + y);
+            PutPixel(x0 + x, y0 - y);
+            PutPixel(x0 - x, y0 - y);
+            PutPixel(x0 - x, y0 + y);
+        }
+
+        public static double CountDiff(int x, int y, int radius)
+        {
+            double dist = Math.Sqrt(x * x + y * y);
+            double diff = Math.Abs(dist - radius);
+            return diff;
         }
 
         private void y1TB_TextChanged(object sender, EventArgs e)
